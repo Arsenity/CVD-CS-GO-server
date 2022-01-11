@@ -2,11 +2,14 @@ version: "3.3"
 
 services:
   cs:
-    image: cm2network/csgo:latest
+    image: kmallea/csgo:latest
     volumes:
         - ./server.cfg:/home/steam/csgo-dedicated/server.cfg
     restart: always
     environment:
+      PORT: 55655
+      TV_PORT: 55666
+      AUTHKEY: '745807093EEF0616C117A88AC586CCDC'
       SRCDS_PORT: 55655
       SRCDS_TV_PORT: 55666
       SRCDS_TOKEN: '745807093EEF0616C117A88AC586CCDC'
