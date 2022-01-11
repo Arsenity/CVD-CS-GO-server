@@ -23,3 +23,5 @@ services:
       SRCDS_HOST_WORKSHOP_COLLECTION: 0
       SRCDS_WORKSHOP_AUTHKEY: ""
       ADDITIONAL_ARGS: ""
+volumes:
+  - ${PWD}/server.cfg:/home/steam/csgo-dedicated/server.cfg
