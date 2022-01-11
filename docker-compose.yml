@@ -4,7 +4,7 @@ services:
   cs:
     image: cm2network/csgo:latest
     volumes:
-        - server.cfg:/home/steam/csgo-dedicated/server.cfg
+        - ./server.cfg:/home/steam/csgo-dedicated/server.cfg
     restart: always
     environment:
       SRCDS_PORT: 55655
