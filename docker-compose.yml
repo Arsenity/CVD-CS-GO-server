@@ -4,7 +4,7 @@ services:
   cs:
     image: kmallea/csgo:latest
     volumes:
-        - ./server.cfg:/home/steam/csgo-dedicated/server.cfg
+        - ./server.cfg:/home/steam/csgo/server.cfg
     restart: always
     environment:
       PORT: 55655
