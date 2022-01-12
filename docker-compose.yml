@@ -4,8 +4,8 @@ services:
   cs:
     image: cm2network/csgo:latest
     volumes:
-        - ./server.cfg: /home/steam/csgo-dedicated/server.cfg
-        - srv_dir: /home/steam/csgo-dedicated
+        - "./server.cfg:/home/steam/csgo-dedicated/server.cfg"
+        - "srv_dir:/home/steam/csgo-dedicated"
     restart: always
     environment:
       SRCDS_PORT: 55655
@@ -32,10 +32,10 @@ services:
       - "21:21"
       - "47400-47470:47400-47470"
     volumes: 
-      - srv_dir:/home/vsftpd
+      - "srv_dir:/home/vsftpd"
     environment:
       FTP_USER: cvd
       FTP_PASS: yunwisdom
       PASV_ADDRESS:  2.57.186.162
 volumes:
-  - srv_dir:
+  - srv_dir: {}
