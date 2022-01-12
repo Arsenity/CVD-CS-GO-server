@@ -4,7 +4,7 @@ services:
   cs:
     image: cm2network/csgo:latest
     volumes:
-        - ./server.cfg:/home/steam/csgo-dedicated/server.cfg
+        - ./server.cfg:/home/steam/csgo-dedicated/csgo/cfg/server.cfg
         - srv_dir:/home/steam/csgo-dedicated
     restart: always
     environment:
@@ -38,4 +38,7 @@ services:
       FTP_PASS: yunwisdom
       PASV_ADDRESS:  2.57.186.162
 volumes:
-   srv_dir: {}
+   srv_dir:
+     external: true
+     name: srv_dir
+
