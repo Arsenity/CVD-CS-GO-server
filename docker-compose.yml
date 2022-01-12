@@ -5,7 +5,7 @@ services:
     image: cm2network/csgo:latest
     volumes:
         - ./server.cfg:/home/steam/csgo-dedicated/server.cfg
-        - cvd:/home/steam/csgo-dedicated
+        - srv_dir:/home/steam/csgo-dedicated
     restart: always
     environment:
       SRCDS_PORT: 55655
@@ -24,5 +24,18 @@ services:
       SRCDS_HOST_WORKSHOP_COLLECTION: 0
       SRCDS_WORKSHOP_AUTHKEY: ""
       ADDITIONAL_ARGS: ""
+  ftp_server:
+    image: bogem/ftp
+    container_name: ftp
+    ports:
+      - "20:20"
+      - "21:21"
+      - "47400-47470:47400-47470"
+    volumes: 
+      - srv_dir:/home/vsftpd
+    environment:
+      FTP_USER: cvd
+      FTP_PASS: yunwisdom
+      PASV_ADDRESS:  2.57.186.162
 volumes:
-  - cvd: {}
+  - srv_dir: {}
