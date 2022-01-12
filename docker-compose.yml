@@ -37,5 +37,4 @@ services:
       FTP_USER: cvd
       FTP_PASS: yunwisdom
       PASV_ADDRESS:  2.57.186.162
-volumes:
-  - srv_dir: {}
+
